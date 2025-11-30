@@ -1,0 +1,5 @@
+Show the total number of admissions
+Difficulty - Easy
+
+select count(patient_id)
+from admissions1
