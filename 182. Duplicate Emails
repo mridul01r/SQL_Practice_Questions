@@ -1,0 +1,6 @@
+182. Duplicate Emails
+
+select email
+from Person
+group by Email
+having count(email) > 1
