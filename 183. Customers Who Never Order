@@ -1,0 +1,14 @@
+183. Customers Who Never Order
+Difficulty - Easy
+
+Solution - 1
+# Write your MySQL query statement below
+select name as Customers 
+from Customers as c
+where c.id not in(select customerId from Orders)
+
+Solution 2
+select name as Customers from Customers c
+left join Orders
+on c.id = customerId 
+where customerId is null
