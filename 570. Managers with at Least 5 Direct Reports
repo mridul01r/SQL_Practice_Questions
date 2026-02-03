@@ -1,0 +1,16 @@
+570. Managers with at Least 5 Direct Reports
+Difficulty - Medium
+
+Solution 1 
+select name from Employee e1
+where (select count(e2.managerId) from Employee e2
+        where e1.id = e2.managerId) >= 5
+
+
+
+Solution 2
+select e1.name from Employee e1
+inner join Employee e2
+on e1.id = e2.managerId 
+group by e2.managerId 
+having count(e2.department) >= 5
