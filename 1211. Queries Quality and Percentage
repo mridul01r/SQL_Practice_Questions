@@ -1,0 +1,9 @@
+1211. Queries Quality and Percentage
+Difficulty - Easy
+
+
+# Write your MySQL query statement below
+select query_name, round((sum(rating/ position))/count(rating), 2) as quality, round(((select count(rating) from Queries 
+                                                    q1 where rating < 3 && q.query_name = q1.query_name)) / count(rating) * 100, 2) as poor_query_percentage
+from Queries q
+group by query_name
